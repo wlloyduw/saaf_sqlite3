@@ -13,7 +13,7 @@ json={"\"name\"":"\"Susan\u0020Smith\",\"param1\"":1,\"param2\"":2,\"param3\"":3
 #echo ""
 
 echo "Invoking Lambda function using AWS CLI"
-time output=`aws lambda invoke --invocation-type RequestResponse --function-name hellosqlite_f21_tcc562 --region us-east-2 --payload $json /dev/stdout | head -n 1 | head -c -2 ; echo`
+time output=`aws lambda invoke --invocation-type RequestResponse --cli-binary-format raw-in-base64-out --function-name function-name --region us-east-1 --payload $json /dev/stdout | head -n 1 | head -c -2 ; echo`
 
 echo ""
 echo "JSON RESULT:"
